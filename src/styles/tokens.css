@@ -1,0 +1,96 @@
+:root {
+  /* Font Families - Google Sans Flex across the website */
+  --sans: 'Google Sans Flex', 'Google Sans Flex Variable', 'Google Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --serif: "Fraunces", Georgia, serif;
+  --font-lausanne: 'Google Sans Flex', 'Google Sans', "TWK Lausanne", "Lausanne", var(--sans);
+  --font-hero: "Vastago Grotesk", 'Google Sans Flex', var(--sans);
+  --font-heading-now: 'Google Sans Flex', 'Google Sans', var(--sans);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Theme (Default) */
+:root, [data-theme="light"] {
+  --bg: #ffffff;
+  --card: #ffffff;
+  --ink: #0b0b0c;
+  --ink-soft: #46464b;
+  --muted: #8b8b90;
+  --line: #e6e6ea;
+  --blue: #18181b;
+  --blue-hover: #27272a;
+  --blue-deep: #09090b;
+  --blue-tint: #f4f4f5;
+
+  /* Backward compatibility token mapping */
+  --bg-primary: var(--bg);
+  --bg-secondary: var(--line);
+  --bg-tertiary: var(--blue-tint);
+  --text-primary: var(--ink);
+  --text-secondary: var(--ink-soft);
+  --text-muted: var(--muted);
+  --border-color: var(--line);
+  
+  --brand-primary: var(--blue);
+  --brand-secondary: var(--blue-deep);
+  --brand-accent: var(--blue-tint);
+  --search-overlay-bg: rgba(0, 0, 0, 0.08);
+
+  /* Shimmer animation tokens */
+  --shimmer-start: var(--ink);
+  --shimmer-mid: #ffffff;
+  --shimmer-end: var(--ink);
+
+  /* Standardized Elevation Tokens (Subtle modern SaaS aesthetic) */
+  --shadow-dropdown: 0 8px 24px -4px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 2px 8px -2px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  --shadow-modal: 0 16px 40px -8px rgba(0, 0, 0, 0.12), 0 8px 16px -4px rgba(0, 0, 0, 0.04);
+  --shadow-tooltip: 0 4px 14px -2px rgba(0, 0, 0, 0.08);
+  --shadow-button: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-floating: var(--shadow-dropdown);
+}
+
+/* Dark Theme */
+[data-theme="dark"],
+.dark {
+  --bg: #0b0b0c;
+  --card: #18181b;
+  --ink: #f5f5f7;
+  --ink-soft: #c7c7cc;
+  --muted: #6f6f76;
+  --line: #232326;
+  --blue: #27272a;
+  --blue-hover: #3f3f46;
+  --blue-deep: #18181b;
+  --blue-tint: #27272a;
+
+  /* Backward compatibility token mapping */
+  --bg-primary: var(--bg);
+  --bg-secondary: var(--line);
+  --bg-tertiary: var(--blue-tint);
+  --text-primary: var(--ink);
+  --text-secondary: var(--ink-soft);
+  --text-muted: var(--muted);
+  --border-color: var(--line);
+  
+  --brand-primary: var(--blue);
+  --brand-secondary: var(--blue-deep);
+  --brand-accent: var(--blue-tint);
+  --search-overlay-bg: rgba(0, 0, 0, 0.22);
+
+  /* Shimmer animation tokens */
+  --shimmer-start: var(--ink);
+  --shimmer-mid: #ffffff;
+  --shimmer-end: var(--ink);
+
+  /* Standardized Elevation Tokens (Dark mode - refined subtle elevation) */
+  --shadow-dropdown: 0 8px 24px -4px rgba(0, 0, 0, 0.45), 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 2px 8px -2px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-modal: 0 16px 40px -8px rgba(0, 0, 0, 0.65), 0 8px 16px -4px rgba(0, 0, 0, 0.4);
+  --shadow-tooltip: 0 4px 14px -2px rgba(0, 0, 0, 0.5);
+  --shadow-button: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-floating: var(--shadow-dropdown);
+}

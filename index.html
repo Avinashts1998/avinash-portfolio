@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avinash Shajan</title>
+    <link rel="icon" type="image/png" href="/assets/title-logo/title_logo_light.png" />
+    <link rel="shortcut icon" type="image/png" href="/assets/title-logo/title_logo_light.png" />
+    <link rel="apple-touch-icon" href="/assets/title-logo/title_logo_light.png" />
+    <script>
+      (function() {
+        try {
+          var t = sessionStorage.getItem('theme');
+          if (t === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+    <script>
+      // Suppress benign Vite HMR websocket connection warnings/errors in sandboxed preview environment
+      (function () {
+        const NativeWebSocket = window.WebSocket;
+        if (NativeWebSocket) {
+          window.WebSocket = function (url, protocols) {
+            const urlStr = typeof url === 'string' ? url : '';
+            const protStr = typeof protocols === 'string' ? protocols : Array.isArray(protocols) ? protocols.join(' ') : '';
+            const isViteHmr =
+              urlStr.includes('vite') ||
+              urlStr.includes('ws') ||
+              protStr.includes('vite-hmr');
+
+            if (isViteHmr) {
+              const dummyWs = {
+                readyState: 3, // CLOSED
+                bufferedAmount: 0,
+                extensions: '',
+                protocol: '',
+                binaryType: 'blob',
+                url: urlStr,
+                CONNECTING: 0,
+                OPEN: 1,
+                CLOSING: 2,
+                CLOSED: 3,
+                send: function () {},
+                close: function () {},
+                addEventListener: function () {},
+                removeEventListener: function () {},
+                dispatchEvent: function () { return true; },
+                onopen: null,
+                onerror: null,
+                onclose: null,
+                onmessage: null,
+              };
+              return dummyWs;
+            }
+            return new NativeWebSocket(url, protocols);
+          };
+          window.WebSocket.CONNECTING = 0;
+          window.WebSocket.OPEN = 1;
+          window.WebSocket.CLOSING = 2;
+          window.WebSocket.CLOSED = 3;
+          if (NativeWebSocket.prototype) {
+            window.WebSocket.prototype = NativeWebSocket.prototype;
+          }
+        }
+
+        const isViteWsError = (msg) =>
+          typeof msg === 'string' &&
+          (msg.includes('[vite]') ||
+            msg.includes('WebSocket closed') ||
+            msg.includes('vite:ws') ||
+            msg.includes('failed to connect'));
+
+        const origError = console.error;
+        console.error = function (...args) {
+          if (args.some((a) => isViteWsError(a) || (a && isViteWsError(a.message)))) return;
+          origError.apply(console, args);
+        };
+
+        const origWarn = console.warn;
+        console.warn = function (...args) {
+          if (args.some((a) => isViteWsError(a) || (a && isViteWsError(a.message)))) return;
+          origWarn.apply(console, args);
+        };
+
+        const origLog = console.log;
+        console.log = function (...args) {
+          if (args.some((a) => isViteWsError(a) || (a && isViteWsError(a.message)))) return;
+          origLog.apply(console, args);
+        };
+
+        window.addEventListener('unhandledrejection', function (event) {
+          if (event.reason && isViteWsError(event.reason.message || event.reason)) {
+            event.preventDefault();
+          }
+        });
+        window.addEventListener('error', function (event) {
+          if (event && isViteWsError(event.message || event.filename)) {
+            event.preventDefault();
+          }
+        });
+      })();
+    </script>
+    <!-- Preconnect to Cloudinary early to optimize image loading times -->
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+    <link rel="dns-prefetch" href="https://res.cloudinary.com">
+    <!-- Preload critical above-the-fold images and fonts for instant loading -->
+    <link rel="preload" href="/assets/fonts/VastagoGrotesk-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="https://fonts.gstatic.com/s/onest/v11/gNMKW3F-SZuj7xmf-HY.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="https://res.cloudinary.com/p66qxgqe/image/upload/v1784958046/eclipqr3elwuuhz9jwm4.webp" as="image" type="image/webp" crossorigin="anonymous" />
+    <link rel="preload" href="https://res.cloudinary.com/p66qxgqe/image/upload/v1784958046/x10noqpftpmbupldbtrf.webp" as="image" type="image/webp" crossorigin="anonymous" />
+    <!-- Google Sans Flex and Onest Fonts for Site-wide Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600&family=Google+Sans:wght@400;500;600&family=Google+Sans+Text:wght@400;500;600&family=Onest:wght@100;200;300;400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,272 @@
+{
+  "entities": {
+    "AboutPhoto": {
+      "title": "AboutPhoto",
+      "description": "Uploaded photo for the about page 5-photo polaroid stack",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique image identifier (e.g. card-1, card-2, card-3, card-4, card-5)"
+        },
+        "caption": {
+          "type": "string",
+          "description": "Display caption or title for the image"
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "Secure Cloudinary URL of the uploaded image in profile_images folder"
+        },
+        "slotIndex": {
+          "type": "number",
+          "description": "Index slot (0 to 4) for the 5-photo About section polaroid stack"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of when the image was uploaded or updated"
+        }
+      },
+      "required": ["id", "imageUrl"]
+    },
+    "Project": {
+      "title": "Project",
+      "description": "Portfolio project entry",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique project identifier"
+        },
+        "title": {
+          "type": "string",
+          "description": "Project title"
+        },
+        "description": {
+          "type": "string",
+          "description": "Project description"
+        }
+      },
+      "required": ["id", "title"]
+    },
+    "Setting": {
+      "title": "Setting",
+      "description": "Global portfolio configuration and images",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Setting document ID (outside_work or more_photos)"
+        },
+        "MyImage01": { "type": "string" },
+        "MyImage02": { "type": "string" },
+        "MyImage03": { "type": "string" },
+        "photo_1_url": { "type": "string" },
+        "photo_2_url": { "type": "string" },
+        "photo_3_url": { "type": "string" },
+        "photo_4_url": { "type": "string" },
+        "photo_5_url": { "type": "string" },
+        "photo_1_caption": { "type": "string" },
+        "photo_2_caption": { "type": "string" },
+        "photo_3_caption": { "type": "string" },
+        "photo_4_caption": { "type": "string" },
+        "photo_5_caption": { "type": "string" }
+      },
+      "required": ["id"]
+    },
+    "ProfilePicture": {
+      "title": "ProfilePicture",
+      "description": "Portfolio owner primary profile picture / display photo (DP)",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier, e.g. active_profile"
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "Secure Cloudinary URL of the profile display picture"
+        },
+        "caption": {
+          "type": "string",
+          "description": "Optional label or caption"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of upload or update"
+        }
+      },
+      "required": ["id", "imageUrl"]
+    },
+    "ExplorationInsight": {
+      "title": "ExplorationInsight",
+      "description": "Exploration insights scene background and ambient audio data",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique scene identifier"
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "Cloudinary image URL in explore_collections/exploration_images folder"
+        },
+        "audioUrl": {
+          "type": "string",
+          "description": "Cloudinary audio URL in explore_collections/exploration_audios folder"
+        },
+        "title": {
+          "type": "string",
+          "description": "Scene display heading"
+        },
+        "location": {
+          "type": "string",
+          "description": "Location description"
+        },
+        "authorName": {
+          "type": "string",
+          "description": "Author or photographer name"
+        },
+        "authorAvatar": {
+          "type": "string",
+          "description": "Author avatar photo URL"
+        },
+        "audioLabel": {
+          "type": "string",
+          "description": "Audio caption/label"
+        },
+        "blurAmount": {
+          "type": "number",
+          "description": "Optical blur depth in px"
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "Whether this is the active default background"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation ISO timestamp"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last update ISO timestamp"
+        }
+      },
+      "required": ["id", "imageUrl"]
+    },
+    "ResumeItem": {
+      "title": "ResumeItem",
+      "description": "Uploaded resume document stored in Cloudinary resume folder",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "url": { "type": "string" },
+        "publicId": { "type": "string" },
+        "size": { "type": "number" },
+        "uploadedAt": { "type": "string" },
+        "isPrimary": { "type": "boolean" },
+        "source": { "type": "string" },
+        "cloudinaryFolder": { "type": "string" }
+      },
+      "required": ["id", "name", "url", "isPrimary"]
+    },
+    "Testimonial": {
+      "title": "Testimonial",
+      "description": "Public and admin endorsements, recommendations, and reviews",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "position": { "type": "string" },
+        "company": { "type": "string" },
+        "quote": { "type": "string" },
+        "ImgUrl": { "type": "string" },
+        "linkedInUrl": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "name", "position", "company", "quote"]
+    },
+    "FieldNote": {
+      "title": "FieldNote",
+      "description": "Digital notebook field notes, observations, photos, and thoughts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier for the note" },
+        "type": { "type": "string", "description": "Type of note: photo, text, or design" },
+        "title": { "type": "string", "description": "Optional title for design or text notes" },
+        "content": { "type": "string", "description": "Main observation or body content" },
+        "date": { "type": "string", "description": "Formatted date string" },
+        "location": { "type": "string", "description": "Optional location observation tag" },
+        "imageUrl": { "type": "string", "description": "Cloudinary or image URL" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Category tags"
+        },
+        "aspectRatio": { "type": "string", "description": "Image aspect ratio" },
+        "createdAt": { "type": "number", "description": "Creation timestamp in milliseconds" }
+      },
+      "required": ["id", "type", "content", "date", "createdAt"]
+    },
+    "SessionBooking": {
+      "title": "SessionBooking",
+      "description": "Mentorship session bookings submitted via portfolio or external booking website",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique booking identifier" },
+        "chooseTopic": { "type": "string", "description": "Topic chosen for the session" },
+        "sessionDuration": { "type": "string", "description": "Session duration" },
+        "date": { "type": "string", "description": "Session date" },
+        "time": { "type": "string", "description": "Session time slot" },
+        "timeFormat": { "type": "string", "description": "Time format or timezone" },
+        "fullName": { "type": "string", "description": "Full name of the mentee" },
+        "emailAddress": { "type": "string", "description": "Email address of the mentee" },
+        "currentRole": { "type": "string", "description": "Current role / experience" },
+        "portfolioUrl": { "type": "string", "description": "Portfolio or LinkedIn URL" },
+        "helpWith": { "type": "string", "description": "Discussion topics / what would you like help with" },
+        "status": { "type": "string", "description": "Status: confirmed, completed, cancelled" },
+        "createdAt": { "type": "string", "description": "Creation timestamp ISO string" }
+      },
+      "required": ["id"]
+    }
+  },
+  "firestore": {
+    "/settings/{settingId}": {
+      "schema": "Setting",
+      "description": "Collection storing settings documents including outside_work and more_photos"
+    },
+    "/settings/more_photos/items/{photoId}": {
+      "schema": "AboutPhoto",
+      "description": "Subcollection under settings/more_photos for each individual photo slot"
+    },
+    "/profile_pictures/{docId}": {
+      "schema": "ProfilePicture",
+      "description": "Collection storing uploaded profile display pictures (DP)"
+    },
+    "/resumes/{resumeId}": {
+      "schema": "ResumeItem",
+      "description": "Collection storing portfolio resumes with primary selection"
+    },
+    "/exploration_insights/{insightId}": {
+      "schema": "ExplorationInsight",
+      "description": "Collection storing exploration insight scenes with images and audios"
+    },
+    "/projects/{projectId}": {
+      "schema": "Project",
+      "description": "Portfolio case studies and projects"
+    },
+    "/testimonials/{testimonialId}": {
+      "schema": "Testimonial",
+      "description": "Collection storing public and admin recommendations and testimonials"
+    },
+    "/field_notes/{noteId}": {
+      "schema": "FieldNote",
+      "description": "Collection storing personal field notes, sketches, and observations"
+    },
+    "/session_bookings/{bookingId}": {
+      "schema": "SessionBooking",
+      "description": "Collection storing session bookings from portfolio and external site"
+    }
+  }
+}
