@@ -1,0 +1,19 @@
+[
+  {
+    "id": "booking_1790935254535",
+    "sessionType": "UI/UX Career Guidance",
+    "duration": "60 minutes",
+    "date": "Tue, Oct 6, 2026",
+    "rawDate": "2026-10-06",
+    "startTime": "3:30 PM · Afternoon",
+    "endTime": "4:30 PM",
+    "timezone": "GST (Dubai, GMT+4)",
+    "name": "Avinash Shajan",
+    "email": "avinashts1122@gmail.com",
+    "role": "3.5",
+    "portfolioUrl": "https://ais-dev-lxyz5vjxib42qzkdgtqjuf-558501098947.europe-west2.run.app/session-booking",
+    "message": "https://ais-dev-lxyz5vjxib42qzkdgtqjuf-558501098947.europe-west2.run.app/session-bookinghttps://ais-dev-lxyz5vjxib42qzkdgtqjuf-558501098947.europe-west2.run.app/session-booking",
+    "status": "confirmed",
+    "createdAt": "2026-10-02T10:00:54.535Z"
+  }
+]

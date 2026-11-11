@@ -1,0 +1,29 @@
+[
+  {
+    "id": "msg_1792074380316_quni0",
+    "name": "Avinash TS",
+    "email": "avinashts1122@gmail.com",
+    "phone": "+917559082108",
+    "message": "Testing contact modal fix",
+    "receivedAt": "2026-10-15T14:26:20.302Z",
+    "read": false
+  },
+  {
+    "id": "msg_1792074094948_uajcn",
+    "name": "Tester",
+    "email": "test@example.com",
+    "phone": null,
+    "message": "Hello world test message",
+    "receivedAt": "2026-10-15T14:21:34.935Z",
+    "read": false
+  },
+  {
+    "id": "msg_1792068061717_yjhbv",
+    "name": "Avinash TS",
+    "email": "avinashts1122@gmail.com",
+    "phone": "+917559082108",
+    "message": "fvfdvbfgbfbg",
+    "receivedAt": "2026-10-15T12:41:01.695Z",
+    "read": false
+  }
+]
